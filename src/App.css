@@ -25,3 +25,41 @@ header img {
   align-items: center;
   justify-content: center;
 }
+
+.cards-container {
+  text-align: left;
+  display: flex;
+  flex-flow: row;
+  width: 90%;
+  margin: auto;
+  overflow-x: auto;
+}
+
+.people-card {
+  background: rgb(51, 51, 51);
+  background: linear-gradient(
+    180deg,
+    rgba(51, 51, 51, 1) 0%,
+    rgba(26, 26, 26, 1) 35%
+  );
+  margin: 15px;
+  border-radius: 10px;
+  min-width: 25%;
+  height: 200px;
+}
+
+.people-card:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
+
+.people-name {
+  text-align: center;
+  padding: 7px;
+  font-size: xx-large;
+  font-weight: bold;
+}
+
+p {
+  margin: 8px;
+}

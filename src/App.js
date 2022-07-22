@@ -16,6 +16,7 @@ function App() {
     }
 
     setItems(results.data);
+    console.log(results.data);
   };
 
   useEffect(() => {
