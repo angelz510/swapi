@@ -8,15 +8,20 @@ function App() {
   const [items, setItems] = useState([]);
 
   const fetchPeople = async () => {
-    let results = await axios(`https://swapi.dev/api/people`);
-
-    for (let i = 0; i < results.data.results.length; i++) {
-      const result = await axios.get(`${results.data.results[i].homeworld}`);
-      results.data.results[i].homeworld = result.data;
+    let i = 1;
+    let allPeople = [];
+    while (i < 10) {
+      let res = await axios(`https://swapi.dev/api/people/?page=${i}`);
+      allPeople.push(...res.data.results);
+      i++;
     }
 
-    setItems(results.data);
-    console.log(results.data);
+    for (let i = 0; i < allPeople.length; i++) {
+      const result = await axios.get(`${allPeople[i].homeworld}`);
+      allPeople[i].homeworld = result.data;
+    }
+
+    setItems(allPeople);
   };
 
   useEffect(() => {
