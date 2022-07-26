@@ -5,7 +5,8 @@ import Header from "./components/Header";
 import People from "./components/People";
 
 function App() {
-  const [items, setItems] = useState([]);
+  const [people, setPeople] = useState([]);
+  const [planets, setPlanets] = useState([]);
 
   const fetchPeople = async () => {
     let i = 1;
@@ -21,17 +22,31 @@ function App() {
       allPeople[i].homeworld = result.data;
     }
 
-    setItems(allPeople);
+    setPeople(allPeople);
+  };
+
+  const fetchPlanets = async () => {
+    let i = 1;
+    let allPlanets = [];
+    while (i < 7) {
+      let res = await axios(`https://swapi.dev/api/planets/?page=${i}`);
+      allPlanets.push(...res.data.results);
+      i++;
+    }
+
+    setPlanets(allPlanets);
+    console.log(allPlanets);
   };
 
   useEffect(() => {
     fetchPeople();
+    fetchPlanets();
   }, []);
 
   return (
     <div className="App">
       <Header />
-      <People items={items} />
+      <People people={people} />
     </div>
   );
 }
