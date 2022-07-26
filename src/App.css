@@ -56,10 +56,48 @@ header img {
 .people-name {
   text-align: center;
   padding: 7px;
-  font-size: xx-large;
+  font-size: x-large;
   font-weight: bold;
+  background-color: rgb(51, 51, 51);
+  border-radius: 10px;
 }
 
 p {
   margin: 8px;
+}
+
+.planet-cards-container {
+  text-align: left;
+  display: flex;
+  flex-flow: row;
+  width: 90%;
+  margin: auto;
+  overflow-x: auto;
+}
+
+.planet-card {
+  background: rgb(51, 51, 51);
+  background: linear-gradient(
+    180deg,
+    rgba(51, 51, 51, 1) 0%,
+    rgba(26, 26, 26, 1) 35%
+  );
+  margin: 15px;
+  border-radius: 10px;
+  min-width: 25%;
+  height: 200px;
+}
+
+.planet-card:hover {
+  transform: scale(1.02);
+  transition: all 0.2s ease-in-out;
+}
+
+.planet-name {
+  text-align: center;
+  padding: 7px;
+  font-size: x-large;
+  font-weight: bold;
+  background-color: rgb(51, 51, 51);
+  border-radius: 10px;
 }

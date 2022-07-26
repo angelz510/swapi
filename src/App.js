@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
 import People from "./components/People";
+import Planets from "./components/Planets";
 
 function App() {
   const [people, setPeople] = useState([]);
@@ -23,6 +24,7 @@ function App() {
     }
 
     setPeople(allPeople);
+    console.log(allPeople);
   };
 
   const fetchPlanets = async () => {
@@ -46,7 +48,10 @@ function App() {
   return (
     <div className="App">
       <Header />
+      <h1 style={{ textAlign: "center" }}>People</h1>
       <People people={people} />
+      <h1 style={{ textAlign: "center" }}>Planets</h1>
+      <Planets planets={planets} />
     </div>
   );
 }
