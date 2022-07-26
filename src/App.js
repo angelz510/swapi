@@ -24,7 +24,6 @@ function App() {
     }
 
     setPeople(allPeople);
-    console.log(allPeople);
   };
 
   const fetchPlanets = async () => {
@@ -37,7 +36,6 @@ function App() {
     }
 
     setPlanets(allPlanets);
-    console.log(allPlanets);
   };
 
   useEffect(() => {
