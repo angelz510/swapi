@@ -1,6 +1,7 @@
 # Swapi
 
-An application used to list Star Wars characters and planets. Built with React, JavaScript, and CSS.
+An application used to list Star Wars characters and planets. Built with React, JavaScript, and CSS.  
+Check it out [here](https://swapidb.netlify.app/)!
 
 ## Project Status
 
